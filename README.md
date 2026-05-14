@@ -1,2 +1,2 @@
-# House_Price_Detection
-House Price Detection using Machine learning and Flask.
+# House_Price_Prediction
+House Price Prediction using Machine learning and Flask.
