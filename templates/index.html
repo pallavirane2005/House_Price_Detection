@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Property Price Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏠 Smart Property Price Prediction</h1>
+            <p>Enter property details to get an instant price estimate</p>
+        </div>
+
+        <form id="predictForm">
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Lot Area (sq ft)</label>
+                    <input type="number" name="LotArea" value="8450" required>
+                </div>
+                <div class="input-group">
+                    <label>Overall Quality (1-10)</label>
+                    <input type="number" name="OverallQual" min="1" max="10" value="7" required>
+                </div>
+                <div class="input-group">
+                    <label>Overall Condition (1-10)</label>
+                    <input type="number" name="OverallCond" min="1" max="10" value="5" required>
+                </div>
+                <div class="input-group">
+                    <label>Year Built</label>
+                    <input type="number" name="YearBuilt" min="1800" max="2025" value="2003" required>
+                </div>
+                <div class="input-group">
+                    <label>Ground Living Area (sq ft)</label>
+                    <input type="number" name="GrLivArea" value="1710" required>
+                </div>
+                <div class="input-group">
+                    <label>Full Bathrooms</label>
+                    <input type="number" name="FullBath" min="0" max="5" value="2" required>
+                </div>
+                <div class="input-group">
+                    <label>Bedrooms</label>
+                    <input type="number" name="BedroomAbvGr" min="0" max="10" value="3" required>
+                </div>
+                <div class="input-group">
+                    <label>Total Rooms</label>
+                    <input type="number" name="TotRmsAbvGrd" min="2" max="15" value="8" required>
+                </div>
+                <div class="input-group">
+                    <label>Garage Capacity (cars)</label>
+                    <input type="number" name="GarageCars" min="0" max="5" value="2" required>
+                </div>
+                <div class="input-group">
+                    <label>Basement Area (sq ft)</label>
+                    <input type="number" name="TotalBsmtSF" value="856" required>
+                </div>
+                <div class="input-group">
+                    <label>Neighborhood</label>
+                    <select name="Neighborhood" required>
+                        <option value="CollgCr">College Creek</option>
+                        <option value="Veenker">Veenker</option>
+                        <option value="Crawfor">Crawford</option>
+                        <option value="NoRidge">North Ridge</option>
+                        <option value="Mitchel">Mitchell</option>
+                        <option value="Somerst">Somerset</option>
+                        <option value="NWAmes">NW Ames</option>
+                        <option value="OldTown">Old Town</option>
+                        <option value="BrkSide">Brookside</option>
+                        <option value="NridgHt">Northridge Heights</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>House Style</label>
+                    <select name="HouseStyle" required>
+                        <option value="2Story">2 Story</option>
+                        <option value="1Story">1 Story</option>
+                        <option value="1.5Fin">1.5 Finished</option>
+                        <option value="SFoyer">Split Foyer</option>
+                        <option value="SLvl">Split Level</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Kitchen Quality</label>
+                    <select name="KitchenQual" required>
+                        <option value="Ex">Excellent</option>
+                        <option value="Gd" selected>Good</option>
+                        <option value="TA">Typical/Average</option>
+                        <option value="Fa">Fair</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="predict-btn">🔮 Predict Price</button>
+        </form>
+
+        <div id="result" class="result-box hidden">
+            <div class="price-label">Estimated Price</div>
+            <div class="price-value" id="priceValue">$0</div>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
